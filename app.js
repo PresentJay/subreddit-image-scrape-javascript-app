@@ -1,6 +1,6 @@
 async function fetchData() {
     const subredditName = "programmerhumor";
-    const fetchingAmount = 100;
+    const fetchingAmount = 99;
     const response = await fetch(`https://www.reddit.com/r/${subredditName}.json?limit=${fetchingAmount}`);
     const body = await response.json();
     try {
@@ -9,7 +9,6 @@ async function fetchData() {
             index = getRandomInt(0, 100)
         let image = document.createElement("img");
         image.src = body.data.children[index].data.url;
-        image.style = "display: block;-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;"
         document.body.appendChild(image);        
     } catch (e) {
         console.log(`Error: ${e}`)
