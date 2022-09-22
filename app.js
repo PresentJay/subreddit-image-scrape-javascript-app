@@ -1,5 +1,5 @@
-const subredditName = process.env.SUBREDDIT_NAME;
-const fetchingAmount = process.env.AMOUNT;
+const subredditName = "programmerhumor";
+const fetchingAmount = 100;
 
 async function fetchData() {
     const response = await fetch(`https://www.reddit.com/r/${subredditName}.json?limit=${fetchingAmount}`);
