@@ -1,7 +1,6 @@
-const subredditName = "programmerhumor";
-const fetchingAmount = 100;
-
 async function fetchData() {
+    const subredditName = "programmerhumor";
+    const fetchingAmount = 100;
     const response = await fetch(`https://www.reddit.com/r/${subredditName}.json?limit=${fetchingAmount}`);
     const body = await response.json();
     try {
