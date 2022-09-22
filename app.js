@@ -19,7 +19,6 @@ async function fetchData() {
                 let link = document.createElement('a');
                 let filename = data.url.split('/').pop()
                 link.download = filename;
-
                 link.href = URL.createObjectURL(blob);
                 link.click();
 
