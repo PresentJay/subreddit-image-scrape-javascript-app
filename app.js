@@ -1,11 +1,11 @@
-const subredditName = "programmerhumor";
-const fetchingAmount = 100;
+const subredditName = process.env.SUBREDDIT_NAME;
+const fetchingAmount = process.env.AMOUNT;
 
 async function fetchData() {
     const response = await fetch(`https://www.reddit.com/r/${subredditName}.json?limit=${fetchingAmount}`);
     const body = await response.json();
     try {
-        let index=0
+        let index = 0
         while (body.data.children[index].data.post_hint != "image")
             index = getRandomInt(0, 100)
         let image = document.createElement("img");
